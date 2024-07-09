@@ -1,0 +1,37 @@
+﻿@model IEnumerable<StudentMVC.Models.Student>
+
+@{
+    ViewData["Title"] = "Students";
+}
+
+<h2>Students</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile Number</th>
+            <th>Address</th>
+            <th>Date</th>
+            <th>Fees</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.id</td>
+                <td>@student.name</td>
+                <td>@student.email</td>
+                <td>@student.mobileNumber</td>
+                <td>@student.address</td>
+                <td>@student.date.ToString("yyyy-MM-dd")</td>
+                <td>@student.fees</td>
+                <td>@student.status</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Search Student by Status";
+}
+
+<h2>Search Student by Status</h2>
+
+<form asp-action="SearchByStatus" method="post">
+    <div>
+        <label for="status">Status:</label>
+        <input type="text" id="status" name="status" />
+        <div class="text-danger">@ViewData.ModelState["status"]?.Errors.FirstOrDefault()?.ErrorMessage</div>
+    </div>
+    <button type="submit">Search</button>
+</form>

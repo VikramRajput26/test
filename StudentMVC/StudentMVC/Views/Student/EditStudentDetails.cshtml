@@ -1,0 +1,43 @@
+﻿@model StudentMVC.Models.Student
+
+@{
+    ViewData["Title"] = "Edit Student Details";
+}
+
+<h1>Edit Student Details</h1>
+
+<form asp-controller="Student" asp-action="EditStudentDetails" method="post">
+    <input type="hidden" id="id" name="Id" value="@Model.id" />
+
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="Name" value="@Model.name" />
+        <div class="text-danger">@ViewData.ModelState["name"]?.Errors.FirstOrDefault()?.ErrorMessage</div>
+    </div>
+
+    <div>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="Email" value="@Model.email" />
+        <div class="text-danger">@ViewData.ModelState["email"]?.Errors.FirstOrDefault()?.ErrorMessage</div>
+    </div>
+
+    <div>
+        <label for="mobileNumber">Mobile Number:</label>
+        <input type="text" id="mobileNumber" name="MobileNumber" value="@Model.mobileNumber" />
+        <div class="text-danger">@ViewData.ModelState["mobileNumber"]?.Errors.FirstOrDefault()?.ErrorMessage</div>
+    </div>
+
+    <div>
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="Address" value="@Model.address" />
+        <div class="text-danger">@ViewData.ModelState["address"]?.Errors.FirstOrDefault()?.ErrorMessage</div>
+    </div>
+
+    <div>
+        <label for="status">Status:</label>
+        <input type="text" id="status" name="Status" value="@Model.status" />
+        <div class="text-danger">@ViewData.ModelState["status"]?.Errors.FirstOrDefault()?.ErrorMessage</div>
+    </div>
+
+    <button type="submit">Update Details</button>
+</form>

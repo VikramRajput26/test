@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Login</title>
+</head>
+<body>
+    <h2>Student Login</h2>
+    <form action="/Student/StudentLogin" method="post">
+        <div>
+            <label for="Username">Username</label>
+            <input type="text" id="Username" name="Username" />
+            <div class="text-danger">@ViewData.ModelState["Username"]?.Errors.FirstOrDefault()?.ErrorMessage</div>
+        </div>
+        <div>
+            <label for="Password">Password</label>
+            <input type="password" id="Password" name="Password" />
+            <div class="text-danger">@ViewData.ModelState["Password"]?.Errors.FirstOrDefault()?.ErrorMessage</div>
+        </div>
+        <div>
+            <input type="submit" value="Login" />
+        </div>
+       @*  <div class="text-danger">
+            @if (ViewData.ModelState[""] != null)
+            {
+                <span>@ViewData.ModelState[""].Errors.FirstOrDefault()?.ErrorMessage</span>
+            }
+        </div> *@
+    </form>
+</body>
+</html>
